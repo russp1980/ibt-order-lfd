@@ -36,7 +36,11 @@
 {% endblock %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  {% if pageTitle %}
+    {{ pageTitle }} - {{ serviceName }} - GOV.UK
+    {% else %}
+    {{ serviceName }} - GOV.UK
+  {% endif %}
 {% endblock %}
 
 {% block header %}
