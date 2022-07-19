@@ -18,6 +18,22 @@ router.post('/country-answer', function (req, res) {
         res.redirect('/somthing-else-else')
     }
 })
+
+// test-reason-category.html routing.
+router.post('/reason-category-answer', function (req, res) {
+    var category = req.session.data['test-reason-category']
+    if (category == "health"){
+        res.redirect('order-lateral-flow-kits/test-reason-health')
+    } else if (category == "work") {
+        res.redirect('order-lateral-flow-kits/test-reason-work')
+    } else if (category == "another") {
+        res.redirect('order-lateral-flow-kits/england-exit-page')
+        // if no selection is made send to the health route
+    } else {
+        res.redirect('order-lateral-flow-kits/test-reason-health')
+    }
+})
+
 module.exports = router
 
 
